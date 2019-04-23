@@ -1,6 +1,3 @@
-# Sperm-Data-Labelling-Nuxt
-
-> My magnificent Nuxt.js project
 
 ## Build Setup
 
