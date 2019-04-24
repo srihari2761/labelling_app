@@ -54,15 +54,10 @@
                   dark
 
                   @click="toggle"
-                >
-                  <v-scroll-y-transition>
-                    <div
-                      v-if="active"
-                      class="display-3 text-xs-center"
-                    >
-                      Active
-                    </div>
-                  </v-scroll-y-transition>
+                >                      
+                {{Active[n]}}
+
+                  
                 </v-card>
               </v-item>
             </v-flex>
@@ -82,21 +77,13 @@
               <v-item>
                 <v-card
 
-                  slot-scope="{ active, toggle }"
-                  :color="active ? 'primary' : ''"
                   class="d-flex align-center card-custom"
                   dark
 
-                  @click="toggle"
+                  @click="toggleon(Active1[n])"
                 >
-                  <v-scroll-y-transition>
-                    <div
-                      v-if="active"
-                      class="display-3 text-xs-center"
-                    >
-                      Active
-                    </div>
-                  </v-scroll-y-transition>
+                    {{Active1[n]}}
+
                 </v-card>
               </v-item>
             </v-flex>
@@ -110,71 +97,22 @@
 </template>
 
 <script>
-
-// console.log(this.$route.user)
-// console.log(this.$route.query.user)
-// console.log(this.$route.params)
-
-
   export default {
-
-       validate ({ params }) {
-    // Must be a number
-    return (params.id)
-  },
     data: () => ({
-      ecosystem: [
-        {
-          text: 'vuetify-loader',
-          href: 'https://github.com/vuetifyjs/vuetify-loader'
-        },
-        {
-          text: 'github',
-          href: 'https://github.com/vuetifyjs/vuetify'
-        },
-        {
-          text: 'awesome-vuetify',
-          href: 'https://github.com/vuetifyjs/awesome-vuetify'
-        }
-      ],
-      importantLinks: [
-        {
-          text: 'Documentation',
-          href: 'https://vuetifyjs.com'
-        },
-        {
-          text: 'Chat',
-          href: 'https://community.vuetifyjs.com'
-        },
-        {
-          text: 'Made with Vuetify',
-          href: 'https://madewithvuetifyjs.com'
-        },
-        {
-          text: 'Twitter',
-          href: 'https://twitter.com/vuetifyjs'
-        },
-        {
-          text: 'Articles',
-          href: 'https://medium.com/vuetify'
-        }
-      ],
-      whatsNext: [
-        {
-          text: 'Explore components',
-          href: 'https://vuetifyjs.com/components/api-explorer'
-        },
-        {
-          text: 'Select a layout',
-          href: 'https://vuetifyjs.com/layout/pre-defined'
-        },
-        {
-          text: 'Frequently Asked Questions',
-          href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions'
-        }
 
-      ]
-    })
+      Active:["Saab", "Volvo", "BMW","Saab", "Volvo", "BMW","Saab", "Volvo", "BMW","Saab", "Volvo", "BMW"],
+      Active1: ["chuck","Previous", "Not Sperm", "Next"],
+      label: "",
+      imageno:""
+    }),
+    methods: {
+      toggleon:function(temp){
+
+      console.log(temp)
+      console.log(this.$route.params)
+
+      }
+    },
   }
 </script>
 
